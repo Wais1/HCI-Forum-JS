@@ -4,6 +4,9 @@ const canGiveBlood = (donor, receiver) => {
     // Exit if O- because blood type is universal
     if(donor==="O-") return true
 
+    // Conditions for O+
+    if((donor === "O+") && (receiver === "A+")) return true;
+
     // Conditions for A+
     if((donor === "A+") && (receiver === "A+" || receiver === "AB+")) return true;
 
@@ -32,6 +35,11 @@ var receiver = "AB+"
 
 // Results
 console.log(`Can ${donor} give blood to ${receiver}? ${canGiveBlood(donor, receiver)}`)
+
+var donor = "O+";
+var receiver = "A+";
+console.log(`Can ${donor} give blood to ${receiver}? ${canGiveBlood(donor, receiver)}`)
+
 
 // Test variables
 var donor = "A+";
